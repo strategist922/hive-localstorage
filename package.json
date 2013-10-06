@@ -1,0 +1,13 @@
+{
+  "name": "hive-localstorage",
+  "version": "0.0.0",
+  "authors": [
+    "aj0strow"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "phantomjs": "~1.9.2-2",
+    "mocha-phantomjs": "~3.1.5"
+  }
+}
