@@ -1,7 +1,6 @@
-module.exports = (grunt) ->
-  
-  grunt.initConfig
-    pkg: grunt.file.readJSON('package.json')
+gruntfile = ->
+  @initConfig
+    pkg: @file.readJSON('package.json')
     
     reporter: 'spec'
     
@@ -16,11 +15,14 @@ module.exports = (grunt) ->
         command: 'mocha-phantomjs -R <%= reporter %> test/runner.html'
       test_clean:
         command: 'rm -r test/*_test.js'
-
-  grunt.loadNpmTasks('grunt-exec')
   
-  grunt.registerTask 'compile', [ 'exec:compile' ]
+  @loadNpmTasks 'grunt-exec'
   
-  grunt.registerTask 'test', [ 'exec:test_compile', 'exec:test_run', 'exec:test_clean' ]
+  @registerTask 'compile', [ 'exec:compile' ]
+  
+  @registerTask 'test', [ 'exec:test_compile', 'exec:test_run', 'exec:test_clean' ]
 
-  grunt.registerTask 'default', ['test']
+  @registerTask 'default', ['test']
+
+module.exports = (grunt) ->
+  gruntfile.bind(grunt).call()
