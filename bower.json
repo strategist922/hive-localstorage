@@ -1,0 +1,12 @@
+{
+  "name": "hive-localstorage",
+  "version": "0.0.0",
+  "authors": [
+    "aj0strow"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "chai": "~1.8.0"
+  }
+}
